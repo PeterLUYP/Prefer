@@ -1,1 +1,4 @@
-<h2>客戶忠誠度分析系統</h2>
+
+<h2 id = "h2">客戶忠誠度分析系統</h2>
+<%= collection_select( :Region_Name, :Region_Code, Regioncode.all, :Region_Code, :Region_Name)%>
+<%= select_tag(:Time_ID, options_for_select([2007, 2007], [2008, 2008], [2009,2009], [2010,2010], [2011,2011]))%>
