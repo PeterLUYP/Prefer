@@ -1,4 +1,27 @@
 Rails.application.routes.draw do
+  resources :regioncodes do
+    resources :groups
+  end
+
+  resources :groups do
+    resources :tourorders
+  end
+
+  resources :groups do
+    resources :paxdatas 
+  end
+
+  resources :paxdatas do
+    resources :groups 
+  end
+
+  resources :paxdatas do
+    resources :tourorders
+  end
+
+  resources :tourorders do
+    resources :paxdatas
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
