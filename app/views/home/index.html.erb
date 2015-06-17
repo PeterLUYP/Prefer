@@ -1,5 +1,17 @@
 
 <h2 id = "h2">客戶忠誠度分析系統</h2>
-<%= collection_select( :Region_Name, :Region_Code, Regioncode.all, :Region_Code, :Region_Name)%>
-<%= select_tag(:Tour_Date, options_for_select([['2007', 2007], ['2008', 2008], ['2009',2009], ['2010',2010], ['2011',2011]], 2007)) %>
-<%= select_tag(:Count, options_for_select([['2', 2], ['3', 3], ['4', 4], ['5次以上', 5]], 2)) %>
+<p>地區</p>
+<div>
+<%= collection_select( :Region_Code, :Region_Name, Regioncode.all, :Region_Code, :Region_Name)%>
+</div>
+<p>年度</p>
+<div>
+<%= select_tag(@year, options_for_select([['2007', 2007], ['2008', 2008], ['2009',2009], ['2010',2010], ['2011',2011]], 2007)) %>
+</div>
+<p>次數</p>
+<div>
+<%= select_tag(@count, options_for_select([['2', 2], ['3', 3], ['4', 4], ['5次以上', 5]], 2)) %>
+</div>
+<div>
+<%= link_to "分析", paxdatas_path %>
+</div>
