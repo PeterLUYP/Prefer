@@ -6,12 +6,16 @@
 </div>
 <p>年度</p>
 <div>
-<%= select_tag(@year, options_for_select([['2007', 2007], ['2008', 2008], ['2009',2009], ['2010',2010], ['2011',2011]], 2007)) %>
+<%= select_tag(@startDate, options_for_select([['2007', '2007-01-01'], ['2008', '2008-01-01'], ['2009','2009-01-01'], ['2010','2010-01-01'], ['2011','2011-01-01']], '2007-01-01')) %>
+</div>
+<p>到</p>
+<div>
+<%= select_tag(@endDate, options_for_select([['2007', '2007-12-31'], ['2008','2008-12-31'], ['2009','2009-12-31'], ['2010','2010-12-31'], ['2011','2011-12-31']], '2007-12-31')) %>
 </div>
 <p>次數</p>
 <div>
-<%= select_tag(@count, options_for_select([['2', 2], ['3', 3], ['4', 4], ['5次以上', 5]], 2)) %>
+<%= select_tag(@gender, options_for_select([['男','男'], ['女', '女']], '女')) %>
 </div>
 <div>
-<%= link_to "分析", paxdatas_path %>
-</div>
+<%= link_to "分析",  dashboards_path(@startDate, @endDate, gender) %>
+</div>)
